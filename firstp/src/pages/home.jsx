@@ -9,7 +9,8 @@ function Home() {
         {id: 4, title: 'Forrest Gump', director: 'Robert Zemeckis'},
         {id: 5, title: 'The Dark Knight', director: 'Christopher Nolan'},
     ];
-function handleSearch (e) {
+    
+const handleSearch = (e) => {
     e.preventDefault()
     alert(search)
 
@@ -30,9 +31,14 @@ function handleSearch (e) {
             </form>
             
       <div class name="movie-list"> 
-        {movies.map(movie => (
+        {movies.map(
+          (movie) => 
+           
+            movie.title.toLowerCase().startsWith(search) && (
           <MovieCard movie={movie} key = {movie.id} /> 
-        ))}
+        
+        )
+        )}
        
             
         
